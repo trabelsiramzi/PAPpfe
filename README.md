@@ -26,6 +26,10 @@ Employee Management and Performance Evaluation System includes 3 modules for Adm
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-
-
+How to run Project : 
+    Run composer install or php composer.phar install
+    Run php artisan key:generate
+    Run php artisan migrate
+    Run php artisan db:seed to run seeders, if any.
+    Run php artisan serve
 
