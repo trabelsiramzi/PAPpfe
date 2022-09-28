@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', 'IndexController@index');
-
 
 
 //---------------------------------USER-LOGIN-------------------------------
@@ -116,8 +114,8 @@ Route::get('/', 'IndexController@index');
 
     Auth::routes();
 
+    Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 //---------------------------MANAGER-----------------------------
 
     Route::middleware(['checkManagerAuth'])->group(function () {
