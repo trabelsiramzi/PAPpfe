@@ -27,9 +27,9 @@ Employee Management and Performance Evaluation System includes 3 modules for Adm
 </p>
 
 How to run Project : 
-Run composer install or php composer.phar install
-Run php artisan key:generate
-Run php artisan migrate
-Run php artisan db:seed to run seeders, if any.
-Run php artisan serve
+<p>Run composer install or php composer.phar install</p>
+<p>Run php artisan key:generate</p>
+<p>Run php artisan migrate</p>
+<p>Run php artisan db:seed to run seeders, if any.</p>
+<p>Run php artisan serve</p>
 
