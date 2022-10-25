@@ -106,25 +106,12 @@ class EmployeeController extends Controller
     {
         $this->validate($request,[
             'department_id'=> 'required',
-            'manager_id'=> 'required',
-            'employee_official_id'=> 'required',
-            'first_name'=> 'required|max:15|min:3',
-            'last_name'=> 'required|max:20|min:3',
-            'email'=> 'required|unique:employees,email',
-            'phone_number'=> 'required|max:15|min:15',
-            'gender'=> 'required',
-            'date_of_birth'=> 'required',
-            'employee_salary'=> 'required',
-            'employee_account_number'=> 'required|unique:employees,employee_account_number',
-            'qualification'=> 'required',
-            'user_name'=> 'required|max:15|min:5|unique:employees,user_name',
-            'password'=> 'required|max:25|min:8|unique:employees,password',
-            'address'=> 'required',
-            'manager_image'=> 'required',
+            'manager_id'=> 'required'
+            
         ]);
     }
     public function saveEmployee(Request $request)
-    {
+    { try{
         $this->validateEmployeeInfo($request);
         $imageUrl = $this->uploadEmployeeImage($request);
 
@@ -147,6 +134,10 @@ class EmployeeController extends Controller
         $employee->employee_image = $imageUrl;
         $employee->save();
         return redirect('/employee/add')->with('message','Employee saved successfully');
+    }
+        catch(\Exception $e){
+            // do task when error
+            echo $e->getMessage(); }  // insert query
     }
 
 

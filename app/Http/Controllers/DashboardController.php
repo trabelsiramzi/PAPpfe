@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\Teamlead;
 use App\Models\Manager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
@@ -22,6 +23,10 @@ class DashboardController extends Controller
             {
                 return redirect('/employee');
             }
+            else if(Session::get('userType')=='teamlead')
+            {
+                return redirect('/teamlead');
+            }
         }
         else{
             return view('auth.sign-in');
@@ -39,6 +44,10 @@ class DashboardController extends Controller
             else if(Session::get('userType')=='employee')
             {
                 return redirect('/employee');
+            }
+            else if(Session::get('userType')=='teamlead')
+            {
+                return redirect('/teamlead');
             }
             else
             {
@@ -63,6 +72,30 @@ class DashboardController extends Controller
             else if(Session::get('userType')=='employee')
             {
                 return view('employee.home.home');
+            }
+            else
+            {
+                Session::flush();
+                return redirect('/login/user');
+            }
+        }
+        else{
+            Session::flush();
+            return redirect('/login/user');
+        }
+
+    }
+    public function showTeamleadDashboard()
+    {
+        if(Session::has('userId'))
+        {
+            if(Session::get('userType')=='manager')
+            {
+                return redirect('/manager');
+            }
+            else if(Session::get('userType')=='teamlead')
+            {
+                return view('teamlead.home.home');
             }
             else
             {
@@ -114,6 +147,24 @@ class DashboardController extends Controller
                     Session::put('userType','employee');
                     Session::put('userName',$employee->first_name);
                     return redirect('/employee');
+                }
+                else{
+                    return redirect('/login/user')->with('message','Invalid password!! Please, input a valid password !');
+                }
+            }
+        }
+            else if($request->user_type == 'teamlead')
+        {
+            $teamlead = Teamlead::where('email',$request->email)->first();
+            if($teamlead)
+            {
+                if($request->password==$teamlead->password){
+
+                    Session::flush();
+                    Session::put('userId',$teamlead->id);
+                    Session::put('userType','teamlead');
+                    Session::put('userName',$teamlead->first_name);
+                    return redirect('/teamlead');
                 }
                 else{
                     return redirect('/login/user')->with('message','Invalid password!! Please, input a valid password !');

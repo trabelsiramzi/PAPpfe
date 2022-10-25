@@ -24,6 +24,17 @@
                         <a class="nav-link" href="{{route("manage-employee")}}">{{ __('Manage employee') }}</a>
                     </nav>
                 </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEmployeeLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                     {{ __('Teamlead Info') }}
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseEmployeeLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{route("add-teamlead")}}">{{ __('Add teamlead') }}</a>
+                        <a class="nav-link" href="{{route("manage-teamlead")}}">{{ __('Manage teamlead') }}</a>
+                    </nav>
+                </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTaskLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-tasks"></i></div>
                     {{ __('Task Info') }}

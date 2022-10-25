@@ -27,6 +27,10 @@ class ManagerEmployeeSharedAuthMiddleware
         {
             return $next($request);
         }
+        elseif(Session::has('userId') && Session::has('userName') && Session::has('userType')=='teamlead')
+        {
+            return $next($request);
+        }
         else
         {
             return redirect('/login/user');

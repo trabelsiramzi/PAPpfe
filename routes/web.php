@@ -190,7 +190,16 @@ use Illuminate\Support\Facades\Route;
         )->name('new-employee');
 
         // shared
+        //---------------------------Teamlead------------------------
 
+        Route::get('/teamlead/add', [
+                App\Http\Controllers\TeamleadController::class, 'showAddTeamlead']
+        )->name('add-teamlead');
+        Route::post('/teamlead/save', [
+                App\Http\Controllers\TeamleadController::class, 'saveTeamlead']
+        )->name('new-teamlead');
+
+        // shared
         //---------------------------report------------------------
         //shared
 
@@ -287,6 +296,83 @@ use Illuminate\Support\Facades\Route;
 
     });
 
+//---------------------------TEAMLEAD----------------------------
+
+Route::middleware(['checkTeamleadAuth'])->group(function () {
+
+        //----------------------------auth--------------------
+
+        Route::get('/teamlead',[
+                App\Http\Controllers\DashboardController::class,'showTeamleadDashboard']
+        )->name('teamlead');
+
+        Route::post('/user/sign-out',[
+                App\Http\Controllers\DashboardController::class,'signOutUser']
+        )->name('user-sign-out');
+
+
+        //-----------------------teamlead---------------------------
+
+        Route::get('/teamlead/profile',[
+                App\Http\Controllers\TeamleadController::class,'showTeamleadProfile']
+        )->name('teamlead-profile');
+
+        Route::get('/teamlead/profile-edit',[
+                App\Http\Controllers\TeamleadController::class,'editTeamleadProfile']
+        )->name('edit-teamlead-profile');
+
+        Route::post('/teamlead/profile-edit',[
+                App\Http\Controllers\TeamleadController::class,'updateTeamleadProfile']
+        )->name('update-teamlead-info');
+
+        //-----------------------task---------------------------
+
+        Route::get('/teamlead/new-task',[
+                App\Http\Controllers\TaskController::class,'showNewTaskToTeamlead']
+        )->name('teamlead-show-new-task');
+
+        Route::get('/teamlead/task/details/{id}',[
+                App\Http\Controllers\TaskController::class,'showTaskDetailsToTeamlead']
+        )->name('teamlead-view-task-details');
+
+        Route::get('/teamlead/submit/task-report/{id}',[
+                App\Http\Controllers\TaskController::class,'showTaskDetailsToTeamlead']
+        )->name('teamlead-assign-task');
+
+        Route::get('/teamlead/task/done/{id}',[
+                App\Http\Controllers\TaskController::class,'markTaskAsDoneByTeamlead']
+        )->name('mark-teamlead-task-done');
+
+        Route::get('/teamlead/completed/task/details/{id}',[
+                App\Http\Controllers\TaskController::class,'showCompletedTaskDetailsByTeamlead']
+        )->name('teamlead-view-completed-task-details');
+
+        Route::get('/teamlead/task/complete',[
+                App\Http\Controllers\TaskController::class,'showCompleteTaskToTeamlead']
+        )->name('teamlead-show-complete-task');
+
+        //-----------------------report---------------------------
+
+        Route::get('/teamlead/show/report/submit/{id}',[
+                App\Http\Controllers\ReportController::class,'showTaskReportToTeamlead']
+        )->name('show-task-report-submit');
+
+        Route::post('/teamlead/task/report-submit',[
+                App\Http\Controllers\ReportController::class,'submitTaskReportByTeamlead']
+        )->name('teamlead-submit-task-report');
+
+        Route::get('/show/report/{id}',[
+                App\Http\Controllers\ReportController::class,'showReportFile']
+        )->name('view-task-report');
+
+        //-----------------------rating---------------------------
+
+        Route::get('/teamlead/rating/co-worker',[
+                App\Http\Controllers\RatingController::class,'showCoWorkerRating']
+        )->name('give-rating-to-co-worker');
+
+
+    });
 
 
 
@@ -307,6 +393,19 @@ use Illuminate\Support\Facades\Route;
         Route::get('/employee/delete/{id}',[
                 App\Http\Controllers\EmployeeController::class,'deleteEmployee']
         )->name('delete-employee');
+        //--------------------------teamlead---------------------
+
+        Route::get('/manage-teamlead',[
+                App\Http\Controllers\TeamleadController::class,'showManageTeamlead']
+        )->name('manage-teamlead');
+
+        Route::get('/teamlead/details/{id}',[
+                App\Http\Controllers\TeamleadController::class,'showTeamleadDetails']
+        )->name('view-teamlaed-details');
+
+        Route::get('/teamlead/delete/{id}',[
+                App\Http\Controllers\Teamleadontroller::class,'deleteTeamlead']
+        )->name('delete-teamlead');
 
         //---------------------------report------------------------
 
