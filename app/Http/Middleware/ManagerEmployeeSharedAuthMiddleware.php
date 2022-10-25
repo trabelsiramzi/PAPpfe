@@ -21,7 +21,7 @@ class ManagerEmployeeSharedAuthMiddleware
 
         if(Session::has('userId') && Session::has('userName') && Session::has('userType')=='manager')
         {
-            return $next($request);
+            return $next($request); 
         }
         elseif(Session::has('userId') && Session::has('userName') && Session::has('userType')=='employee')
         {

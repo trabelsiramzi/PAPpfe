@@ -22,7 +22,7 @@ class TaskController extends Controller
         $departments = Department::all();
         return view("admin.task.add-task",[
             'departments'=>$departments
-        ]);
+        ]); 
     }
     public function showManageTask()
     {

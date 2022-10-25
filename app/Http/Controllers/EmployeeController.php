@@ -108,7 +108,7 @@ class EmployeeController extends Controller
             'department_id'=> 'required',
             'manager_id'=> 'required'
             
-        ]);
+        ]); 
     }
     public function saveEmployee(Request $request)
     { try{

@@ -12,7 +12,7 @@
                     <div class="card">
                         <div class="card-header text-center">
                             <h4 class="text-success">teamlead Details</h4>
-                        </div>
+                        </div> 
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-hover">

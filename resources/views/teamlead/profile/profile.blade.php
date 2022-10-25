@@ -85,7 +85,7 @@
                                     <th>Joining Date :</th>
                                     <td>{{$teamlead->created_at}}</td>
                                 </tr>
-                            </table>
+                            </table> 
                         </div>
                         <div class="col-sm-3 text-center border bg-white">
                                 <img height="200px" width="100%"  src="{{asset($teamlead->teamlead_image)}}" alt="">

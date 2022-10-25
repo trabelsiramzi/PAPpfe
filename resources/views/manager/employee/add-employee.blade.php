@@ -44,7 +44,7 @@
                                 {{Form::label('employee_official_id','ID',['class'=>'col-sm-3'])}}
                                 <div class="col-sm-9">
                                     {{Form::text('employee_official_id','EMP-20'.rand(100000,999999),['class'=>'form-control','readonly'])}}
-                                </div>
+                                </div> 
                             </div>
                             <div class="form-group row">
                                 {{Form::label('first_name','First Name',['class'=>'col-sm-3'])}}

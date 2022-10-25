@@ -29,7 +29,7 @@
 <div id="layoutSidenav">
 
     @include('teamlead.includes.menu')
-
+  
     <div id="layoutSidenav_content">
 
     @yield('content')

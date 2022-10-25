@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="{{asset('/')}}admin/ckeditor/samples/css/samples.css">
     <link rel="stylesheet" href="{{asset('/')}}admin/ckeditor/samples/toolbarconfigurator/lib/codemirror/neo.css">
 
-
+ 
 
 
 

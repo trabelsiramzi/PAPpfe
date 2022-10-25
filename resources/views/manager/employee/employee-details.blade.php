@@ -9,7 +9,7 @@
         <div class="container pb-lg-5">
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="card">
+                    <div class="card"> 
                         <div class="card-header text-center">
                             <h4 class="text-success">Employee Details</h4>
                         </div>

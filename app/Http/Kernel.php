@@ -66,7 +66,7 @@ class Kernel extends HttpKernel
         'checkManagerAuth' => \App\Http\Middleware\ManagerAuthMiddleware::class,
         'checkEmployeeAuth' => \App\Http\Middleware\EmployeeAuthMiddleware::class,
         'checkTeamleadAuth' => \App\Http\Middleware\TeamleadAuthMiddleware::class,
-        'checkSharedAuth' => \App\Http\Middleware\SharedAuthMiddleware::class,
+        'checkSharedAuth' => \App\Http\Middleware\SharedAuthMiddleware::class, 
         'checkManagerEmployeeSharedAuth' => \App\Http\Middleware\ManagerEmployeeSharedAuthMiddleware::class,
     ];
 }

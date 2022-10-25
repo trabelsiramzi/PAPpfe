@@ -52,7 +52,7 @@
                                             <td>{{$teamlead->teamlead_official_id}}</td>
                                             <td>{{$teamlead->email}}</td>
                                             <td>{{$teamlead->phone_number}}</td>
-                                            <td>
+                                            <td> 
                                                 <a href="{{route('view-teamlead-details',['id'=>$teamlead->id])}}" class="btn btn-success btn-xs" title="View Details">
                                                     <span class="fa fa-search-plus"></span>
                                                 </a>

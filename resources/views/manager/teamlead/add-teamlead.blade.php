@@ -134,7 +134,7 @@
                                     {{Form::text('password','',['class'=>'form-control','required'])}}
                                     <span class="text-danger">{{$errors->has('password')? $errors->first('password'):''}}</span>
                                 </div>
-                            </div>
+                            </div> 
                             <div class="form-group row">
                                 {{Form::label('teamlead_image','Image',['class'=>'col-sm-3'])}}
                                 <div class="col-sm-9">

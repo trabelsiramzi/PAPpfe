@@ -145,7 +145,7 @@ class TeamleadController extends Controller
         $teamlead->password =$request->password;
         $teamlead->address =$request->address;
         $teamlead->teamlead_image = $imageUrl;
-        $teamlead->save();
+        $teamlead->save(); 
         return redirect('/teamlead/add')->with('message','teamlead saved successfully');
     }
     catch(\Exception $e){
